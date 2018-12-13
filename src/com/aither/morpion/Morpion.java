@@ -56,9 +56,30 @@ public class Morpion {
 	public JLabel Barre;
 	private JLabel PTJ1;
 	private JLabel PTJ2;
-	private JOptionPane Pop;
 	private JLabel LBLJ1;
 	private JLabel LBLJ2;
+	
+	private void setCaseValeurParJButton(JButton btn) {
+		if(btn.equals(Case1)) {
+			case1 = (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case2)) {
+			case2= (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case3)) {
+			case3 = (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case4)) {
+			case4= (btn.getText().equalsIgnoreCase("x"))?1:2;
+		} else if(btn.equals(Case5)) {
+			case5 = (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case6)) {
+			case6= (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case7)) {
+			case7 = (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case8)) {
+			case8= (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}else if(btn.equals(Case9)) {
+			case9= (btn.getText().equalsIgnoreCase("x"))?1:2;
+		}
+	}
 
 	/**
 	 * Launch the application.
@@ -126,152 +147,41 @@ public class Morpion {
 		
 		// Cadre de jeux
 		Case1 = new JButton("");
-		Case1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case1.getText()=="") {
-					if((coups%2)==0) {
-						Case1.setText("X");case1=1;test1();coupJ1++;coups++;
-					}
-					else
-					{
-						Case1.setText("O");case1=2;test2();coupJ2++;coups++;
-					}
-				}
-				
-			}
-		});
+		Case1.addActionListener(btnJeu);
 		frame.getContentPane().add(Case1, "cell 2 3,grow");
 		
 		Case2 = new JButton("");
-		Case2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case2.getText()=="") {
-					if((coups%2)==0) {
-						Case2.setText("X"); case2=1; coups++;coupJ1++; test1();
-					}
-					else
-					{
-						Case2.setText("O"); case2=2; coups++;coupJ2++; test2();
-					}
-				}
-			}
-		});
+		Case2.addActionListener(btnJeu);
 		frame.getContentPane().add(Case2, "cell 3 3,grow");
 		
 		Case3 = new JButton("");
-		Case3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case3.getText()=="") {
-					if((coups%2)==0) {
-						Case3.setText("X");case3=1;test1();coupJ1++;coups++;
-					}
-					else
-					{
-						Case3.setText("O");case3=2;test2();coupJ2++;coups++;
-					}
-				}
-			}
-		});
+		Case3.addActionListener(btnJeu);
 		frame.getContentPane().add(Case3, "cell 4 3,grow");
 		
 		Case4 = new JButton("");
-		Case4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case4.getText()=="") {
-					if((coups%2)==0) {
-						Case4.setText("X");case4=1;coups++;coupJ1++;test1();
-					}
-					else
-					{
-						Case4.setText("O");case4=2;coups++;coupJ2++;test2();
-					}
-				}
-			}
-		});
+		Case4.addActionListener(btnJeu);
 		frame.getContentPane().add(Case4, "cell 2 4,grow");
 		
 		Case5 = new JButton("");
-		Case5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case5.getText()=="") {
-					if((coups%2)==0) {
-						Case5.setText("X");case5=1;coups++;coupJ1++;test1();
-					}
-					else
-					{
-						Case5.setText("O");case5=2;coups++;coupJ2++;test2();
-					}
-				}
-			}
-		});
+		Case5.addActionListener(btnJeu);
 		frame.getContentPane().add(Case5, "cell 3 4,grow");
 		
 		Case6 = new JButton("");
-		Case6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case6.getText()=="") {
-					if((coups%2)==0) {
-						Case6.setText("X");case6=1;coups++;coupJ1++;test1();
-					}
-					else
-					{
-						Case6.setText("O");case6=2;coups++;coupJ2++;test2();
-					}
-				}
-			}
-		});
+		Case6.addActionListener(btnJeu);
 		frame.getContentPane().add(Case6, "cell 4 4,grow");
 		
 		Case7 = new JButton("");
-		Case7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case7.getText()=="") {
-					if((coups%2)==0) {
-						Case7.setText("X");case7=1;coups++;coupJ1++;test1();
-					}
-					else
-					{
-						Case7.setText("O");case7=2;coups++;coupJ2++;test2();
-					}
-				}
-			}
-		});
+		Case7.addActionListener(btnJeu);
 		frame.getContentPane().add(Case7, "cell 2 5,grow");
 		
 		Case8 = new JButton("");
-		Case8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case8.getText()=="") {
-					if((coups%2)==0) {
-						Case8.setText("X");case8=1;coups++;coupJ1++;test1();
-					}
-					else
-					{
-						Case8.setText("O");case8=2;coups++;coupJ2++;test2();
-					}
-				}
-			}
-		});
+		Case8.addActionListener(btnJeu);
 		frame.getContentPane().add(Case8, "cell 3 5,grow");
 		
 		Case9 = new JButton("");
-		Case9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Case9.getText()=="") {
-					if((coups%2)==0) {
-						Case9.setText("X");case9=1;coups++;coupJ1++;test1();
-					}
-					else
-					{
-						Case9.setText("O");case9=2;coups++;coupJ2++;test2();
-					}
-				}
-			}
-		});
+		Case9.addActionListener(btnJeu);
 		frame.getContentPane().add(Case9, "cell 4 5,grow");
 		
-		Pop= new JOptionPane();
-			
 		// zone de texte final
 		JPanel panel_4 = new JPanel();
 		frame.getContentPane().add(panel_4, "cell 1 7 5 1,grow");
@@ -311,20 +221,38 @@ public class Morpion {
 	}
 	private void Victoire1()
 	{
-		Barre.setText("Victoire de "+J1+" en "+coups+" coups");PointJ1++;
-		Pop.showMessageDialog(frame2,"Victoire de "+J1+" en "+coupJ1+"coups");
+		Barre.setText("Victoire de "+J1+" en "+coupJ1+" coups");PointJ1++;
+		JOptionPane.showMessageDialog(frame2,"Victoire de "+J1+" en "+coupJ1+"coups");
 		PTJ1.setText(""+PointJ1+"");
-		case1=0;case2=0;case3=0;case4=0;case5=0;case6=0;case7=0;case8=0;case9=0;coups=0;
+		case1=0;case2=0;case3=0;case4=0;case5=0;case6=0;case7=0;case8=0;case9=0;coups=0;coupJ1=0;coupJ2=0;
 		Case1.setText("");Case2.setText("");Case3.setText("");Case4.setText("");Case5.setText("");
 		Case6.setText("");Case7.setText("");Case8.setText("");Case9.setText("");	
 	}
 	private void Victoire2()
 	{
-		Barre.setText("Victoire de "+J2+" en "+coups+" coups");PointJ2++;
-		Pop.showMessageDialog(frame2,"Victoire de "+J2+" en "+coupJ2+" coups");
+		Barre.setText("Victoire de "+J2+" en "+coupJ2+" coups");PointJ2++;
+		JOptionPane.showMessageDialog(frame2,"Victoire de "+J2+" en "+coupJ2+" coups");
 		PTJ2.setText(""+PointJ2+"");
-		case1=0;case2=0;case3=0;case4=0;case5=0;case6=0;case7=0;case8=0;case9=0;
+		case1=0;case2=0;case3=0;case4=0;case5=0;case6=0;case7=0;case8=0;case9=0;coups=0;coupJ1=0;coupJ2=0;
 		Case1.setText("");Case2.setText("");Case3.setText("");Case4.setText("");Case5.setText("");
 		Case6.setText("");Case7.setText("");Case8.setText("");Case9.setText("");coups=0;
 	}
+	
+	ActionListener btnJeu = new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			JButton btn = (JButton) e.getSource();
+			if(btn.getText()=="") {
+				if((coups%2)==0) {
+					coupJ1++;coups++;
+					btn.setText("X");
+				} else {
+					coupJ2++;coups++;
+					btn.setText("O");
+				}
+				setCaseValeurParJButton(btn);
+				test1();
+				test2();
+			}
+		}
+	};
 }
