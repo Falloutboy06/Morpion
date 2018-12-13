@@ -119,18 +119,27 @@ public class Morpion {
 		//Nom joueur 1
 		JLabel Joueur1 = new JLabel("Joueur1 Croix");
 		frame.getContentPane().add(Joueur1, "flowx,cell 1 0,alignx center,aligny center");
-		
-		//Nom joueur 2 
-		JLabel Joueur2 = new JLabel(" Joueur 2 Rond");
-		frame.getContentPane().add(Joueur2, "flowx,cell 5 0,alignx center,aligny center");
-		
 		LBLJ1 = new JLabel("");
 		frame.getContentPane().add(LBLJ1, "cell 1 1,alignx center");
 		LBLJ1.setText(J1);
 		
+		//Nom joueur 2 
+		JLabel Joueur2 = new JLabel(" Joueur 2 Rond");
+		frame.getContentPane().add(Joueur2, "flowx,cell 5 0,alignx center,aligny center");
 		LBLJ2 = new JLabel("");
 		frame.getContentPane().add(LBLJ2, "cell 5 1,alignx center");
 		LBLJ2.setText(J2);
+		
+		// bouton Quitter
+		btnQuitter = new JButton("Quitter");
+		btnQuitter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		frame.getContentPane().add(btnQuitter, "cell 3 1,alignx center");
+		
+		
 		
 		//point joueur 1
 		JPanel panel = new JPanel();
@@ -255,4 +264,5 @@ public class Morpion {
 			}
 		}
 	};
+	private JButton btnQuitter;
 }

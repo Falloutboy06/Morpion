@@ -59,6 +59,19 @@ public class FirstWindow {
 		panel_2.setLayout(new BorderLayout(0, 0));
 		JLabel lblNewLabel = new JLabel("Joueur 1");
 		panel_2.add(lblNewLabel, BorderLayout.SOUTH);
+		
+		// Bouton lancement du jeu
+		JButton btnNewButton = new JButton("Lancer");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				J1=Joueur1.getText();
+				J2=Joueur2.getText();
+				FirstWindow.this.frame.setVisible(false);
+				windowJeu = new Morpion(J1,J2);
+				
+			}
+		});
+		frame.getContentPane().add(btnNewButton, "cell 3 0,alignx center,aligny center");
 		JPanel panel_3 = new JPanel();
 		frame.getContentPane().add(panel_3, "cell 4 0 2 1,alignx center,aligny center");
 		panel_3.setLayout(new BorderLayout(0, 0));
@@ -73,18 +86,13 @@ public class FirstWindow {
 		panelJ1.add(Joueur1, BorderLayout.NORTH);
 		Joueur1.setColumns(10);
 		
-		// Bouton lancement du jeu
-		JButton btnNewButton = new JButton("Lancer");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnNewButton_1 = new JButton("Quitter");
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				J1=Joueur1.getText();
-				J2=Joueur2.getText();
-				FirstWindow.this.frame.setVisible(false);
-				windowJeu = new Morpion(J1,J2);
-				
+				System.exit(0);
 			}
 		});
-		frame.getContentPane().add(btnNewButton, "cell 3 1,alignx center,aligny center");
+		frame.getContentPane().add(btnNewButton_1, "cell 3 1,alignx center,aligny center");
 		// texte joueur 2 
 		JPanel panelJ2 = new JPanel();
 		frame.getContentPane().add(panelJ2, "cell 4 1 2 1,grow");
